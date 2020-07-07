@@ -6,7 +6,6 @@ console.log(canvas.height);
 let i = 0,
   j = 0;
 
-let c = canvas.getContext("2d");
 let x = 200;
 let y = 500;
 let dx = 5;

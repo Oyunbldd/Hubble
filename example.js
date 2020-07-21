@@ -8,17 +8,25 @@ const width = window.innerWidth;
 const height = window.innerHeight;
 console.log(width, height);
 
+let mountain = new Image();
+mountain.src = "mountain-mars.png";
 let x = width;
 let y = height;
 let x1 = width;
+let l=0;
+let l1=cs.width+100;
+let m=y-200;
 console.log(x, y);
 console.log(window.inn);
 let speedY = 0.01 * canvas.height;
 let gravity = 0.0003 * canvas.height;
 const draw = () => {
   ctx.clearRect(0, 0, width + 200, height + 110);
-  ctx.drawImage(Img, 50, y + 27, 60, 60);
-  ctx.drawImage(imageName, x - 50, height + 35, 60, 60);
+  ctx.drawImage(mountain, l, m,cs.width+100 , 300);
+  ctx.drawImage(mountain, l1, m, cs.width+100, 300);
+  ctx.drawImage(Img, 50, y -20, 60, 60);
+
+  ctx.drawImage(imageName, x - 50, height -10, 60, 60);
   // ctx.drawImage(imageName, x1 + 200, height - 100, 60, 60);
   //   ctx.fillRect(x - 150, height - 50, 50, 50);
   //   ctx.fillRect(x + 100, height - 50, 50, 50);
@@ -49,10 +57,23 @@ const jump = () => {
   }
 };
 setInterval(() => {
+  if(l<=-cs.width){
+    l = width+200;
+  }
+  else{
+    l -= 5;
+  }
+  if(l1<=-cs.width){
+    l1 = width+200;
+  }
+  else{
+    l1 -= 5;
+  }
+  console.log(l); 
   x -= 5;
   x1 -= 4;
 
-  if (x <= 135 && x >= 70 && y >= height - 38) {
+  if (x <= 135 && x >= 70 && y >= height -38) {
     console.log(x);
     console.log(y);
 
